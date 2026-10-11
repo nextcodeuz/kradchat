@@ -1,0 +1,36 @@
+# Binaries
+kradchat.exe
+kradchat
+*.exe
+
+# Env
+.env
+
+# Build artifacts
+web/wasm/app.wasm
+*.bak
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts (repo root, wasm from './web/src')
+/src
+*.exe~
+/server.*.log
+*.tmp
+
+# SQLite DB fayllari (runtime data)
+/kradchat.db*
+/data/
+
+# Runtime loglar va protsess chiqindilari (tasodifiy commit oldini)
+*.log
+*.out
+*.err
+lanip.txt
+app*.log
+server*.log
+
+

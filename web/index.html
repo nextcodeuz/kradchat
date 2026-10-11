@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#09090B">
+  <meta name="description" content="KRADCHAT — Talk to the Future. Xavfsiz real-time chat.">
+  <title>KRADCHAT — Talk to the Future</title>
+  <link rel="icon" href="/static/logo.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Oxanium:wght@500;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div id="app">
+    <div class="auth-wrap">
+      <div class="auth-card glass boot-card">
+        <img src="/static/logo.png" alt="KRADCHAT" class="auth-logo boot-logo">
+        <h1 class="auth-title">KRADCHAT</h1>
+        <p class="auth-subtitle">Talk to the Future</p>
+        <div class="boot-bar" role="progressbar" aria-label="Yuklanish"><div class="boot-fill" id="wasm-bar"></div></div>
+        <div class="boot-row"><span class="boot-pct" id="wasm-pct">0%</span><span class="boot-note" id="wasm-note">Yuklanmoqda...</span></div>
+      </div>
+    </div>
+  </div>
+  <div id="profile-overlay" class="modal-overlay hidden">
+    <div class="modal glass">
+      <button class="modal-close" id="profile-close" title="Yopish">✕</button>
+      <div class="profile-avatar" id="profile-avatar"></div>
+      <div class="profile-name" id="profile-name"></div>
+      <div class="profile-username" id="profile-username"></div>
+      <div class="profile-status" id="profile-status"></div>
+      <div class="profile-block-row hidden" id="profile-block-row">
+        <button class="btn-danger btn-small" id="btn-block">🚫 Bloklash</button>
+        <span class="profile-block-note" id="profile-block-note"></span>
+      </div>
+      <div class="profile-dm-row hidden" id="profile-dm-row">
+        <button class="btn-primary btn-small" id="btn-profile-dm">✉ Xabar yuborish</button>
+      </div>
+      <div class="profile-id-row">
+        <span class="profile-label">User ID</span>
+        <code class="profile-id" id="profile-id"></code>
+        <button class="btn-copy" id="btn-copy-id">Nusxalash</button>
+      </div>
+    </div>
+  </div>
+  <div id="toast" aria-live="polite"></div>
+
+  <script src="/wasm/wasm_exec.js"></script>
+  <script src="/wasm/boot.js"></script>
+</body>
+</html>
