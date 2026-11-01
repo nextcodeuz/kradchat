@@ -12,6 +12,13 @@ func TestLoadRejectsDefaultJWTSecret(t *testing.T) {
 	}
 }
 
+func TestLoadRejectsPublishedExampleJWTSecret(t *testing.T) {
+	t.Setenv("JWT_SECRET", "change-me-to-a-long-random-secret-string-min-32-chars-xxxx")
+	if _, err := Load(""); err == nil {
+		t.Error("published example JWT_SECRET should be rejected")
+	}
+}
+
 func TestLoadRejectsShortJWTSecret(t *testing.T) {
 	t.Setenv("JWT_SECRET", "short")
 	if _, err := Load(""); err == nil {
