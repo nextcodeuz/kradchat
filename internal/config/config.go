@@ -159,8 +159,9 @@ func Load(path string) (*Config, error) {
 		return nil, fmt.Errorf("JWT_SECRET must be at least 32 chars (256-bit for HS256)")
 	}
 
-	if cfg.JWT.Secret == "kradchat-super-secret-change-me" {
-		return nil, fmt.Errorf("JWT_SECRET is still the default value; set a strong random secret")
+	if cfg.JWT.Secret == "kradchat-super-secret-change-me" ||
+		cfg.JWT.Secret == "change-me-to-a-long-random-secret-string-min-32-chars-xxxx" {
+		return nil, fmt.Errorf("JWT_SECRET is still a published placeholder; set a unique random secret")
 	}
 
 	if cfg.Security.BcryptCost < 10 || cfg.Security.BcryptCost > 15 {
